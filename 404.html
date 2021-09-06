@@ -6,9 +6,13 @@
   <title>Single Page Apps for GitHub Pages</title>
   <script type="text/javascript">
 
-    var pathSegmentsToKeep = 1;
+    let pathSegmentsToKeep = 1;
+    const version = '0.1.0'
+    const l = window.location;
 
-    var l = window.location;
+    if (l.href.indexOf(version) !== -1) {
+      pathSegmentsToKeep = 2
+    }
     console.log({ l });
     l.replace(
       l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
